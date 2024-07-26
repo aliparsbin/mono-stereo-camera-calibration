@@ -27,6 +27,9 @@ output image (found chessboard pattern):
 
 ## Stereo Camera Calibration
 
+The stereo camera consists of two cameras placed at a distance. As we do not have a stereo camera, we used two mono cameras for this experiment.
+
+The aim is to find the intrinsic parameters of cameras and extrinsic parameters of the stereo (orientation and translation vector of the right camera in corresponding to the left camera). In stereo camera, the left camera is our origin.
 
 
 
