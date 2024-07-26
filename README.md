@@ -17,11 +17,12 @@ For better results, we need at least `10` test patterns.
 
 input image captured by the camera:
 
-![01](https://github.com/user-attachments/assets/c118cdff-c7bb-44fe-b409-29a60a333073)
+![IMG_20210610_160728](https://github.com/user-attachments/assets/33127a83-51e3-48d0-92c8-ea5969f96e24)
+
 
 output image (found chessboard pattern): 
 
-![Uploading pat-0.jpg…]()
+![pat-6](https://github.com/user-attachments/assets/f94572ea-dede-476f-a21d-aa898500ba18)
 
 
 ## Stereo Camera Calibration
