@@ -5,7 +5,7 @@ The aim of the camera calibration is to find the **Intrinsic and Extrinsic Param
 ## Mono Camera Calibration
 
 1. Extrinsic Parameters: corresponds to rotation and translation vectors which translate the coordinates of a 3D point to a coordinate system.
-2. Intrinsic Parameters: they include information like focal length `(fx, fy)` and optical centers `(cx, cy)`.
+2. Intrinsic Parameters: they include information like focal length `(f<sub>x</sub>, f<sub>y</sub>)` and optical centers `(c<sub>x</sub>, c<sub>y</sub>)`.
    The focal length and optical centers can be used to create a camera matrix, which can be used to remove distortion due to the lenses of a specific camera.
    The camera matrix is unique to a specific camera, so once calculated, it can be reused on other images taken by the same camera. It is expressed as a 3x3 matrix:
 
