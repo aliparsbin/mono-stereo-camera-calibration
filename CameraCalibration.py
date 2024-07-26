@@ -8,9 +8,7 @@ import cv2 as cv
 import glob
 import os
 
-
-
-def mono_camera_calibration(images_path: str, patter_path: str):
+def mono_camera_calibration(images_path: str, patterns_path: str):
 
     boardShape = (7,6)
     criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -49,10 +47,9 @@ def mono_camera_calibration(images_path: str, patter_path: str):
             cv.drawChessboardCorners(image, boardShape, corners2, ret)
 
             cv.imshow('image', image)
-            cv.imwrite(patter_path + str(patternFoundCounter) + '.jpg', image)
+            cv.imwrite(patterns_path + str(patternFoundCounter) + '.jpg', image)
             patternFoundCounter += 1 
             cv.waitKey(1)
-
 
     # Camera Calibration
     retu, mtx, dist, rvecs, tvecs =  cv.calibrateCamera(objectPoints, imagePoints, gray.shape[::-1], None, None)
@@ -66,7 +63,7 @@ def mono_camera_calibration(images_path: str, patter_path: str):
 
     mean_error /= len(objectPoints)
     cv.destroyAllWindows()
-    return(mtx, mean_error)
+    return(retu, mtx, dist, rvecs, tvecs, mean_error)
 
 
 def stereo_camera_calibration(img_1_path: str, img_2_path: str):
@@ -112,8 +109,8 @@ def main():
     if cmd == "mono":
         cam = 'Cam-Right' # or 'Cam-Left'
         images_path  = os.path.join('Images',cam,'RGB', '*.jpg' )
-        pattern_path = os.path.join('Images',cam, 'Pattern', 'pat-')
-        mtx, mean_error = mono_camera_calibration(images_path=images_path, patter_path=pattern_path)
+        patterns_path = os.path.join('Images',cam, 'Pattern', 'pat-')
+        retu, mtx, dist, rvecs, tvecs, mean_error = mono_camera_calibration(images_path=images_path, patterns_path=patterns_path)
         print(f"Intrinsic Matrix: {mtx} | Reprojection Error: {mean_error}")
     else:
         image_1_path = os.path.join('Images', 'Cam-Left', 'RGB', '01.jpg')
