@@ -39,3 +39,5 @@ The aim is to find the intrinsic parameters of cameras and extrinsic parameters 
 ![image](https://github.com/user-attachments/assets/75636dce-bcf5-4516-9e2d-7fe59109886b)
 
 The method `stereo_camera_calibration()` is written for the mono camera calibration, which takes `image1_path` and `image2_path` and returns the fundamental matrix, including the rotation and translation vectors.
+
+![stereo-camera-image](https://github.com/user-attachments/assets/af005b55-2f33-48d2-a979-ded4c6133f74)
