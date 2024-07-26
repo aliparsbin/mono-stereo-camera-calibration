@@ -16,7 +16,7 @@ We know the coordinates of these points in real-world space, and we know the coo
 For better results, we need at least `10` test patterns.
 
 The method `mono_camera_calibration()` is written for the mono camera calibration, which takes `images_path` and `patterns_path` and returns the camera matrix, distortion coefficients,
-rotation, translation vectors, and mean_error while saving the pattern images in the specified location.
+rotation, translation vectors, and the projection error while saving the pattern images in the specified location.
 
 ### Result
 
