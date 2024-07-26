@@ -104,10 +104,10 @@ def stereo_camera_calibration(img_1_path: str, img_2_path: str):
 
 
 def main():
-    # cmd="mono" # or it can be "stereo"
-    cmd="Stereo"
+    cmd="mono" # or it can be "stereo"
+    # cmd="Stereo"
     if cmd == "mono":
-        cam = 'Cam-Right' # or 'Cam-Left'
+        cam = 'Cam-Left' # or 'Cam-Left'
         images_path  = os.path.join('Images',cam,'RGB', '*.jpg' )
         patterns_path = os.path.join('Images',cam, 'Pattern', 'pat-')
         retu, mtx, dist, rvecs, tvecs, mean_error = mono_camera_calibration(images_path=images_path, patterns_path=patterns_path)
